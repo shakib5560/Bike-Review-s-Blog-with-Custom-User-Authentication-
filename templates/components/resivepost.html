@@ -1,0 +1,36 @@
+<div class="container mx-auto p-6 max-w-2xl flex flex-wrap gap-5">
+    {% for data in posts %}
+    <div class="mb-10 bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="p-6">
+        <h1 class="text-3xl font-semibold text-gray-800 mb-2">{{ data.title }}</h1>
+        <p class="text-xs text-gray-500 mb-4">{{ data.created_at }}</p>
+        {% if data.images %}
+        <img src="{{ data.images.url }}" alt="Blog Image" class="w-full h-auto max-h-[400px] object-cover rounded-md mb-4">
+        {% endif %}
+        <p class="text-gray-700 leading-relaxed">{{ data.text }}</p>
+
+        
+        <div class="flex space-x-4 mt-5">
+          <!-- Edit Post Button -->
+          <a href="{% url 'updatepost' data.id %}"
+             class="relative inline-block px-6 py-2 font-semibold text-white transition-transform duration-300 bg-blue-600 rounded-lg group hover:scale-110 hover:bg-blue-700">
+              <span class="absolute inset-0 w-full h-full transition-transform duration-500 transform -translate-x-1 -translate-y-1 bg-blue-500 rounded-lg group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <span class="relative">Edit Post</span>
+          </a>
+      
+          <!-- Delete Post Button -->
+          <a href="{% url 'deletepost' data.id %}"
+             class="relative inline-block px-6 py-2 font-semibold text-white transition-transform duration-300 bg-red-600 rounded-lg group hover:scale-110 hover:bg-red-700">
+              <span class="absolute inset-0 w-full h-full transition-transform duration-500 transform translate-x-1 translate-y-1 bg-red-500 rounded-lg group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <span class="relative">Delete Post</span>
+          </a>
+      </div>
+      
+
+      </div>
+    </div>
+    {% endfor %}
+ 
+  </div>
+  
+  
