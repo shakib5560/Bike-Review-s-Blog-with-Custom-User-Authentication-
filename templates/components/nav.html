@@ -17,12 +17,20 @@
   
         <!-- Right side options -->
         <div class="hidden md:flex space-x-4 items-center">
-          <a href="#" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Sign In</a>
-          <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
-          <a href="#" class="flex items-center justify-center w-[50px] h-[50px] overflow-hidden hover:text-blue-600 rounded-full border border-gray-300">
-            <img class="w-full h-full object-cover rounded-full" src="https://static.vecteezy.com/system/resources/previews/001/840/612/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile Image">
-        </a>
+          {% if user.is_authenticated %}
+              <!-- Show Profile Image for Authenticated User -->
+              <div class='ml-[6.5rem]'>
+              <a href="#" class="flex items-center justify-center w-[50px] h-[50px] overflow-hidden hover:text-blue-600 rounded-full border border-gray-300">
+                  <img class="w-full h-full object-cover rounded-full" src="https://static.vecteezy.com/system/resources/previews/001/840/612/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg" alt="Profile Image">
+              </a>
+            </div>
+          {% else %}
+              <!-- Show Sign In and Sign Up links for Unauthenticated User -->
+              <a href="{% url 'login' %}" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Sign In</a>
+              <a href="{% url 'register' %}" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          {% endif %}
         </div>
+      
   
         <!-- Mobile Menu Button -->
         <div class="flex items-center md:hidden">

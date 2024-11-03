@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'pages',
     'posts',
+    'userprofile',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -79,7 +80,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'src.wsgi.application'
 STATIC_URL = '/static/' # below this add the following line
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# settings.py
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -136,3 +141,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+LOGIN_URL = '/accounts/login'
