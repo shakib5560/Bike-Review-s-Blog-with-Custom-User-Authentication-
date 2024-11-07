@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'pages',
     'posts',
     'userprofile',
+    'crispy_forms',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ['127.0.0.1']
@@ -74,8 +77,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            
         },
-    },
+        
+    }, 
 ]
 
 WSGI_APPLICATION = 'src.wsgi.application'

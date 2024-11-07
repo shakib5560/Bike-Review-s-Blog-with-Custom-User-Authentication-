@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+    {% block content %}
+
+    <!-- Button to Open Modal -->
+<div class="flex justify-center pt-5 items-center mb-10 gap-3 mt-5">
+    <button id="openModal" class="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-200">
+       <a href="{% url 'modyfypassword' %}">Change Password </a> 
+    </button>
+    <button id="openModal" class="px-4 py-2 text-white bg-red-600 rounded-lg hover:bg-blue-700 transition duration-200">
+        <a href="{% url 'logout_view' %}"> Sing Out </a> 
+     </button>
+</div>
+    
+
+{% endblock %}    

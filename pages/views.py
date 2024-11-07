@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import userPost
-from .forms import postForm, createAuthforms
+from .forms import postForm, createAuthforms, CustomPasswordChangeForm
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
 
 def home(request):
     posts = userPost.objects.all().order_by('-created_at')
@@ -28,9 +30,10 @@ def createpost(request):
 
 @login_required
 def updatepost(request, pk):
-    post = get_object_or_404(userPost, pk=pk, user = request.user)
+    post = get_object_or_404(userPost, pk=pk, user=request.user)
+    
     if request.method == 'POST':
-        form = postForm(request.POST, instance=post )
+        form = postForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
@@ -38,6 +41,7 @@ def updatepost(request, pk):
             return redirect('blog')
     else:
         form = postForm(instance=post)
+    
     return render(request, 'pages/updatepost.html', {'form': form})
 
 @login_required
@@ -70,3 +74,30 @@ def register(request):
     else:
         form = createAuthforms()
     return render(request, 'registration/register.html', {'form': form})
+
+def profiles(request):
+    return render(request, 'registration/profiles.html')
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')  # Redirect to the home or login page after logout
+
+
+
+@login_required
+def change_password(request):
+    if request.method == 'POST':
+        form = CustomPasswordChangeForm(user=request.user, data=request.POST)  # Pass POST data
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)  # Prevents logout after password change
+            messages.success(request, 'Your password has been changed successfully!')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = CustomPasswordChangeForm(user=request.user)
+
+    return render(request, 'registration/changepassword.html', {'form': form})
+
+

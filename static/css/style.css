@@ -174,6 +174,190 @@ textarea {
     outline: none;
 }
 
+.modal-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+.modal-hidden {
+    display: none;
+}
+.modal-visible {
+    display: flex;
+}
+
+
+.password-change-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.password-change-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.password-change-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.password-change-form p {
+    margin: 10px 0;
+}
+
+.password-change-form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.password-change-form input[type="password"]:focus {
+    border-color: #007bff;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Center the form container */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Title styling */
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form layout */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input field styling */
+.form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s ease;
+}
+
+.form input[type="password"]:focus {
+    border-color: #007bff;
+    background-color: #ffffff;
+}
+
+/* Button styling */
+.form-button {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+/* Optional link below the form */
+.form-container .form-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.form-container .form-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-container .form-link a:hover {
+    text-decoration: underline;
+}
+
+/* Message container styling */
+.messages {
+    margin-bottom: 20px;
+}
+
+/* Base alert styling */
+.alert {
+    padding: 12px;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Success message styling */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+/* Error message styling */
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+
+
 
 /* Animation */
 @keyframes fadeIn {

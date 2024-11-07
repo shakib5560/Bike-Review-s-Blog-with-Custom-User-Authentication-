@@ -9,7 +9,8 @@
         {% endif %}
         <p class="text-gray-700 leading-relaxed">{{ data.text }}</p>
 
-        
+
+        {% if data.user == user %}      
         <div class="flex space-x-4 mt-5">
           <!-- Edit Post Button -->
           <a href="{% url 'updatepost' data.id %}"
@@ -25,7 +26,7 @@
               <span class="relative">Delete Post</span>
           </a>
       </div>
-      
+       {% endif %}
 
       </div>
     </div>
