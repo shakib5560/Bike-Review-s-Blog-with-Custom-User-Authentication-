@@ -29,7 +29,8 @@ CarHub is a comprehensive multi-vendor eCommerce platform designed to facilitate
 ---
 
 🗂 Project Structure
-Bike-Review-s-Blog-with-Custom-User-Authentication/
+Bike-Review-s-Blog-with-Custom-User-Authentication
+
 ├── blog/                     # Blog app
 ├── accounts/                 # Custom user authentication
 ├── static/                   # Static files (CSS, JavaScript, Images)
@@ -38,13 +39,13 @@ Bike-Review-s-Blog-with-Custom-User-Authentication/
 └── README.md
 
 💡 Roadmap
- Add search functionality for posts
- Implement like/dislike feature for reviews
- Add more user profile customization options
- Integrate social media sharing
+ **Add search functionality for posts**
+ **Implement like/dislike feature for reviews**
+ **Add more user profile customization options**
+ **Integrate social media sharing**
 
  📖 Usage
- Registration/Login: Sign up to create an account and log in to access the full features.
- Create a Post: Write and publish reviews of different bike models.
- Comment on Posts: Share thoughts and feedback on others' reviews.
- User Profile Management: Update your profile, change your profile picture, and manage your posts.
+ **Registration/Login: Sign up to create an account and log in to access the full features.**
+ **Create a Post: Write and publish reviews of different bike models.**
+ **Comment on Posts: Share thoughts and feedback on others' reviews.**
+ **User Profile Management: Update your profile, change your profile picture, and manage your posts.**
