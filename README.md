@@ -20,7 +20,7 @@ A comprehensive blog website for bike enthusiasts with custom user authenticatio
 - **HTML, CSS** - Frontend structure and styling
 - **SQLite** - Database for development
 - **JavaScript** - For enhanced interactivity
-- **Bootstrap** - Responsive design components
+- **Tailwindcss** - Responsive design components
 
 ---
 
